@@ -18,5 +18,8 @@ Open Target is currently only supporting the search of a single target
 - Plot the drugs that work for a given target and the diseases associated to it
 - Plot the drugs associated to a given target and the trial phase they are currently in
 
+### Drug endpoint
+- get a table with drug information (year of approval, drug type, toxicity, warnings)
+
 ## Plots
 - Export plots in SVG and PNG
