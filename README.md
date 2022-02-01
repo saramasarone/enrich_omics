@@ -19,4 +19,4 @@ Open Target is currently only supporting the search of a single target
 - Plot the drugs associated to a given target and the trial phase they are currently in
 
 ## Plots
-- explort plots in SVG and PNG
+- Export plots in SVG and PNG
