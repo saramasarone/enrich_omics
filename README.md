@@ -10,7 +10,7 @@ Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of path
 Open Target is currently only supporting the search of a single target
 
 ### Target endpoint
-- Convert Entrz to Ensemble if needed (OpenTargets API accepts only Ensemble IDs)
+- Convert Entrez to Ensemble if needed (OpenTargets API accepts only Ensemble IDs)
 - Get decsritpion of the function of the target
 - Get diseases associated to a certain target
 - Plot diseases associated to a certain target
