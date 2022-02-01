@@ -1,5 +1,5 @@
 # ApplePy
-Python wrapper for EnrichR and OpenTargets API
+Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of pathways enriched and disease associated to a given target or disease
 
 ## EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is "KEGG_pathways_2021"
