@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-###### ENRICHR CLASS ########
-
 import json
 import requests
 import matplotlib.pyplot as plt
@@ -115,9 +107,7 @@ class EnrichR(object):
         ).encode(text='-log(pval):Q').properties(title='Enrichment results - '+str(library_name))
 
         return (bars+text).properties(height=height, width = width)
-    
-
-
+        
 
 class OpenTarget(object):
     def __init__(self, gene_id):
@@ -354,5 +344,8 @@ class OpenTarget(object):
             y='count(drugName)',
             color='trialPhase').properties(title="Trial Phase - " + str(target_id))
             return plot
+
+
+    
 
 
