@@ -42,7 +42,11 @@ Open Target is currently only supporting the search of a single target
 
 
 ## Installation <a name = "installation"></a>
-<pip install enrich-omics>
+```python
+
+pip install enrich-omics
+
+```
 
 ## Tutorial <a name="tutorial"></a>
  Tutorials coming soon
