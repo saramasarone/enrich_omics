@@ -1,15 +1,26 @@
 # enrich_omics
+
+## 📝 Table of Contents
+- [About](#about)
+- [Installation](#installation)
+- [Tutorial](#tutorial)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+
+## 🧐 About <a name = "about"></a>
 Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of pathways enriched and disease associated to a given target or disease
 
-## EnrichR
+#### EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is "KEGG_pathways_2021"
 - Get table with enrichment results
 - Get plot with enrichment results
 
-## OpenTargets
+#### OpenTargets
 Open Target is currently only supporting the search of a single target
 
-### Target endpoint
+#### Target endpoint
 - Convert Entrez to Ensemble if needed (OpenTargets API accepts only Ensemble IDs)
 - Get description of the function of the target
 - Get diseases associated to a certain target
@@ -18,9 +29,26 @@ Open Target is currently only supporting the search of a single target
 - Plot the drugs that work for a given target and the diseases associated to it
 - Plot the drugs associated to a given target and the trial phase they are currently in
 
-### Drug endpoint
+#### Plots
+- Export plots in SVG and PNG
+
+
+#### Drug endpoint
 - Get drug description
 - Get a table with drug information (year of approval, drug type, toxicity, warnings)
 
-## Plots
-- Export plots in SVG and PNG
+
+## Installation <a name = "installation"></a>
+<pip install enrich-omics>
+
+## Tutorial <a name="tutorial"></a>
+
+## Contributiong <a name = "contributing"></a> 
+  
+## Authors <a name = "authors"></a>
+- [@saramasarone](https://github.com/saramasarone) 
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+- Hat tip to anyone whose code was used
+- Inspiration
+- References
