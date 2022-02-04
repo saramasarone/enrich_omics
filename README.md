@@ -1,4 +1,4 @@
-# ApplePy
+# enrich_omics
 Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of pathways enriched and disease associated to a given target or disease
 
 ## EnrichR
