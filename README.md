@@ -3,7 +3,7 @@
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 
-## 📝 Table of Contents
+## Table of Contents
 - [About](#about)
 - [Installation](#installation)
 - [Tutorial](#tutorial)
