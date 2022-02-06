@@ -65,8 +65,8 @@ EnrichR.plot_enrichment(gene_list)
 
 EnrichR.plot_enrichment(gene_list, library_name = 'BioPlanet_2019')
 ```
-![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_enrichment.png)
-![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_enrichment2.png)
+![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/plot_enrichment.png)
+![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/plot_enrichment2.png)
 ```python
 # get results as table for downstream analysis/ pipeline integration
 EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'])
@@ -77,18 +77,18 @@ EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'])
 # OpenTargets takes EnsembleIDs by default, but entrez ids can be passed using the argument entrez = True
 OpenTarget.plot_diseases(target_id = 'PLG', entrez = True) 
 ```
-![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_disease.png)
+![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/plot_disease.png)
 
 ```python
 OpenTarget.get_table_drugs(target_id = 'PLG', entrez = True)
 ```
-![image](https://github.com/saramasarone/enrich_omics/Pictures/Get_table_drugs.png)
+![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Get_table_drugs.png)
 
 ```python
 # Plot drugs and diseases associated to a given target
 OpenTarget.plot_drugs_disease(target_id = 'PLG', entrez = True)
 ```
-![image](https://github.com/saramasarone/enrich_omics/Pictures/PLot_drug_disease.png)
+![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/PLot_drug_disease.png)
 
 
 
