@@ -18,7 +18,7 @@ Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of path
 #### EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is "KEGG_pathways_2021"
 - Get table with enrichment results
-- Get plot with enrichment results
+- Get plot with enrichment results ans export it
 
 #### OpenTargets
 Open Target is currently only supporting the search of a single target
