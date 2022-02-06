@@ -1,4 +1,4 @@
-# enrich_omics
+# enrich_omics: A Python wrapper for EnrichR and Open Targets
  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
@@ -8,9 +8,6 @@
 - [Installation](#installation)
 - [Tutorial](#tutorial)
 - [Contributing](#contributing)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
 
 ## About <a name = "about"></a>
 Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of pathways enriched and disease associated to a given target or disease
@@ -50,13 +47,3 @@ pip install enrich-omics
 
 ## Tutorial <a name="tutorial"></a>
  Tutorials coming soon
-
-## Contributiong <a name = "contributing"></a> 
-  
-## Authors <a name = "authors"></a>
-- [@saramasarone](https://github.com/saramasarone) 
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
