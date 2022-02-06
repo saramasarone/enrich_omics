@@ -10,7 +10,7 @@
 - [Contributing](#contributing)
 
 ## About <a name = "about"></a>
-Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of pathways enriched and disease associated to a given target or disease
+Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of enriched pathways or disease associated to a given target
 
 #### EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is "KEGG_pathways_2021"
@@ -46,4 +46,52 @@ pip install enrich-omics
 ```
 
 ## Tutorial <a name="tutorial"></a>
- Tutorials coming soon
+### EnrichR API
+``` python
+import enrich_omics
+from enrich_omics import EnrichR
+from enrich_omics import OpenTarget
+
+# get all available libraries
+EnrichR.get_libraries()
+```
+
+```python
+# get enrichment for a list of genes/proteins
+# default library is 'KEGG_2021_Human' but specific libraries can be specified using the 'library_name' argument
+
+gene_list = ['LMNA', 'MYH7', 'TNNT2', 'ACE2']
+EnrichR.plot_enrichment(gene_list)
+
+EnrichR.plot_enrichment(gene_list, library_name = 'BioPlanet_2019')
+```
+![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_enrichment.png?raw=true)
+![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_enrichment2.png?raw=true)
+```python
+# get results as table for downstream analysis/ pipeline integration
+EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'])
+![image](https://github.com/saramasarone/enrich_omics/Pictures/Get_table_enrichment.png?raw=true)
+```
+### Open Targets API (Open Targets currently only supports single target enrichment. More information on the OpenTargets website)
+```python
+# OpenTargets takes EnsembleIDs by default, but entrez ids can be passed using the argument entrez = True
+OpenTarget.plot_diseases(target_id = 'PLG', entrez = True) 
+```
+![image](https://github.com/saramasarone/enrich_omics/Pictures/plot_disease.png?raw=true)
+
+```python
+OpenTarget.get_table_drugs(target_id = 'PLG', entrez = True)
+```
+![image](https://github.com/saramasarone/enrich_omics/Pictures/Get_table_drugs.png?raw=true)
+
+```python
+# Plot drugs and diseases associated to a given target
+OpenTarget.plot_drugs_disease(target_id = 'PLG', entrez = True)
+```
+![image](https://github.com/saramasarone/enrich_omics/Pictures/PLot_drug_disease.png?raw=true)
+
+
+
+
+
+
