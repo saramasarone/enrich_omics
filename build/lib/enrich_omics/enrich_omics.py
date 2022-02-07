@@ -67,7 +67,7 @@ class EnrichR(object):
     @classmethod
     def get_table_enrichment(self, list_genes, library_name='KEGG_2021_Human'):
         dct = self.get_enrichment(list_genes)
-        df = pd.DataFrame(dct[0]['KEGG_2021_Human'])
+        df = pd.DataFrame(dct[0][library_name])
         df.columns = ['Rank', 'Term name', 'P-value', 'Z-score', 'Combined score', 
         'Overlapping genes', 'Adjusted p-value', 'Old p-value', 
         'Old adjusted p-value']
@@ -109,7 +109,7 @@ class EnrichR(object):
         return (bars+text).properties(height=height, width = width)
         
 
-class OpenTarget(object):
+class OpenTargets(object):
     def __init__(self, gene_id):
         self.gene_id = gene_id
     

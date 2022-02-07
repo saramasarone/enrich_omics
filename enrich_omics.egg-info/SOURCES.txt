@@ -1,9 +1,10 @@
+LICENSE
 README.md
 setup.py
+./enrich_omics/__init__.py
+./enrich_omics/enrich_omics.py
 ./enrich_omics.egg-info/PKG-INFO
 ./enrich_omics.egg-info/SOURCES.txt
 ./enrich_omics.egg-info/dependency_links.txt
 ./enrich_omics.egg-info/requires.txt
 ./enrich_omics.egg-info/top_level.txt
-./src/__init__.py
-./src/enrich_omics.py
