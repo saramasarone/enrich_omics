@@ -1,6 +1,9 @@
 # Enrich_Omics: A Python wrapper for EnrichR and OpenTargets
  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+ [![GitHub Issues](https://img.shields.io/github/issues/saramasarone/enrich_omics.svg)](https://github.com/saramasarone/enrich_omics/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/saramasarone/enrich_omics.svg)](https://github.com/saramasarone/enrich_omics/pulls)
+
 
 
 ## Table of Contents
@@ -95,6 +98,6 @@ OpenTarget.plot_drugs_disease(target_id = 'PLG', entrez = True)
 
 
 
-
+Contributions always welcome!
 
 
