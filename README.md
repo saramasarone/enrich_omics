@@ -81,18 +81,18 @@ EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'])
 ```python
 # OpenTargets takes EnsembleIDs by default, but entrez ids can be passed using the argument entrez = True
 # Export plots easily in png or svg
-OpenTarget.plot_diseases(target_id = 'PLG', entrez = True) 
+OpenTargets.plot_diseases(target_id = 'PLG', entrez = True) 
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Plot_diseases.png)
 
 ```python
-OpenTarget.get_table_drugs(target_id = 'PLG', entrez = True)
+OpenTargets.get_table_drugs(target_id = 'PLG', entrez = True)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Get_table_drugs.png)
 
 ```python
 # Plot drugs and diseases associated to a given target
-OpenTarget.plot_drugs_disease(target_id = 'PLG', entrez = True)
+OpenTargets.plot_drugs_disease(target_id = 'PLG', entrez = True)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/PLot_drug_disease.png)
 

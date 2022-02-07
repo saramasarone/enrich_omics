@@ -109,7 +109,7 @@ class EnrichR(object):
         return (bars+text).properties(height=height, width = width)
         
 
-class OpenTarget(object):
+class OpenTargets(object):
     def __init__(self, gene_id):
         self.gene_id = gene_id
     
