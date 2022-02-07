@@ -1,4 +1,4 @@
-# Enrich_Omics: A Python wrapper for EnrichR and Open Targets
+# Enrich_Omics: A Python wrapper for EnrichR and OpenTargets
  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
