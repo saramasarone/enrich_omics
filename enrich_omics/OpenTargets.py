@@ -1,7 +1,5 @@
 import json
 import requests
-import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 import altair as alt
 import pandas as pd
