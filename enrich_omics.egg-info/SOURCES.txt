@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+./enrich_omics/EnrichR.py
+./enrich_omics/OpenTargets.py
+./enrich_omics/__init__.py
+./enrich_omics.egg-info/PKG-INFO
+./enrich_omics.egg-info/SOURCES.txt
+./enrich_omics.egg-info/dependency_links.txt
+./enrich_omics.egg-info/requires.txt
+./enrich_omics.egg-info/top_level.txt
