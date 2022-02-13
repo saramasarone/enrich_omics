@@ -39,7 +39,13 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installing.html">Installing enrich_omics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enrichr.html">EnrichR</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenTargets API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenTargets API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#target-endpoint">Target endpoint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-a-description-of-the-biological-function">Get a description of the biological function</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -69,16 +75,45 @@
   <div class="section" id="opentargets-api">
 <h1>OpenTargets API<a class="headerlink" href="#opentargets-api" title="Permalink to this headline"></a></h1>
 <p>The OpenTargets API allows to extract information about drugs and diseases associated to a single target (either a gene or a disease). Currently OpenTargets only supports single queries.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># OpenTargets takes EnsembleIDs by default, but entrez ids can be passed                using the argument entrez = True</span>
+<div class="section" id="target-endpoint">
+<h2>Target endpoint<a class="headerlink" href="#target-endpoint" title="Permalink to this headline"></a></h2>
+<p>To plot the diseases associated to a target (i.e. PLG) you can use the <strong>plot_diseases</strong> function that takes as input either an Ensemble ID or an Entrez gene ID. To use Entrez IDs set entrez = True. You can also specify the max hits you want to show, as well as the height and width of the plot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># OpenTargets takes EnsembleIDs by default, but entrez ids can be</span>
+<span class="c1"># passed using the argument entrez = True</span>
 <span class="c1"># Export plots easily in png or svg</span>
 <span class="n">OpenTargets</span><span class="o">.</span><span class="n">plot_diseases</span><span class="p">(</span><span class="n">target_id</span> <span class="o">=</span> <span class="s1">&#39;PLG&#39;</span><span class="p">,</span> <span class="n">entrez</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Users can get a table with the drugs associated to a particular target and use it for downstream analysis or they can directly plot the results</p>
+<a class="reference internal image-reference" href="_images/Plot_diseases.png"><img alt="alternate text" class="align-center" src="_images/Plot_diseases.png" style="width: 500px; height: 300px;" /></a>
+<p>Results can also be returned as dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_associated_diseases</span><span class="p">(</span><span class="n">target_id</span> <span class="o">=</span> <span class="s1">&#39;ACE2&#39;</span><span class="p">,</span> <span class="n">entrez</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Users can get table with the <strong>drugs associated to a particular target</strong> and use it for downstream analysis. The table will show information about the drug name, mechanism of action, drug type, approved name, the trial phase the drug is involved in and the diseases that are associated to those targets and drugs.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OpenTargets</span><span class="o">.</span><span class="n">get_table_drugs</span><span class="p">(</span><span class="n">target_id</span> <span class="o">=</span> <span class="s1">&#39;PLG&#39;</span><span class="p">,</span> <span class="n">entrez</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Plot drugs and diseases associated to a given target</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/Get_table_drugs.png"><img alt="alternate text" class="align-center" src="_images/Get_table_drugs.png" style="width: 700px; height: 180px;" /></a>
+<p>The results can be visualised and exported as png or svg.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot drugs and diseases associated to a given target</span>
 <span class="n">OpenTargets</span><span class="o">.</span><span class="n">plot_drugs_disease</span><span class="p">(</span><span class="n">target_id</span> <span class="o">=</span> <span class="s1">&#39;PLG&#39;</span><span class="p">,</span> <span class="n">entrez</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/PLot_drug_disease.png"><img alt="alternate text" class="align-center" src="_images/PLot_drug_disease.png" style="width: 390px; height: 460px;" /></a>
+<p>Information about <strong>trial phases</strong> can also be plotted and exported</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plotDrugsPhase</span><span class="p">(</span><span class="n">target_id</span> <span class="o">=</span> <span class="s2">&quot;ENSG00000136244&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/Drug_phase.png"><img alt="alternate text" class="align-center" src="_images/Drug_phase.png" style="width: 300px; height: 500px;" /></a>
+<div class="section" id="get-a-description-of-the-biological-function">
+<h3>Get a description of the biological function<a class="headerlink" href="#get-a-description-of-the-biological-function" title="Permalink to this headline"></a></h3>
+<p>Get a description of the <strong>biological function</strong> of a target of interest. This function returns a dictionary with the target Ensemble ID, the approved symbol, the biotype and a function description.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OpenTargets</span><span class="o">.</span><span class="n">function_description</span><span class="p">(</span><span class="s2">&quot;ENSG00000136244&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Below an example of function description retrieved from Open Targets</p>
+<a class="reference internal image-reference" href="_images/Biological_function.png"><img alt="alternate text" class="align-center" src="_images/Biological_function.png" style="width: 600px; height: 100px;" /></a>
+</div>
 </div>
 </div>
 

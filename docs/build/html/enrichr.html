@@ -69,22 +69,32 @@
              
   <div class="section" id="enrichr">
 <h1>EnrichR<a class="headerlink" href="#enrichr" title="Permalink to this headline"></a></h1>
-<p>EnrichR API allows to extract information about pathways, transcription and drugs associated to a list of genesnor to a single gene.</p>
+<p>EnrichR API allows to extract information about pathways, transcription and drugs associated to a list of genes or to a single gene.</p>
+<p>Import enrich_omics and EnrichR in your file and choose the library you want to use for enrichment. You can check all the 192 libraries available as below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">enrich_omics</span>
 <span class="kn">from</span> <span class="nn">enrich_omics</span> <span class="kn">import</span> <span class="n">EnrichR</span>
-<span class="kn">from</span> <span class="nn">enrich_omics</span> <span class="kn">import</span> <span class="n">OpenTarget</span>
 
 <span class="c1"># get all available libraries</span>
 <span class="n">EnrichR</span><span class="o">.</span><span class="n">get_libraries</span><span class="p">()</span>
-
-<span class="c1"># get enrichment for a list of genes/proteins</span>
-<span class="c1"># default library is &#39;KEGG_2021_Human&#39; but other libraries can be          specified using the &#39;library_name&#39; argument.</span>
+</pre></div>
+</div>
+<p>Once you have selected the library you want to use (default library is KEGG_human_2021), you can see the enrichment results as plot or table. Enrichment scores calculated as -log10(pval).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get enrichment for a list of genes/proteins</span>
+<span class="c1"># default library is &#39;KEGG_2021_Human&#39; but other libraries can be</span>
+<span class="c1"># specified using the &#39;library_name&#39; argument.</span>
 <span class="c1"># check out available libraries with the command above</span>
 
 <span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LMNA&#39;</span><span class="p">,</span> <span class="s1">&#39;MYH7&#39;</span><span class="p">,</span> <span class="s1">&#39;TNNT2&#39;</span><span class="p">,</span> <span class="s1">&#39;ACE2&#39;</span><span class="p">]</span>
 <span class="n">EnrichR</span><span class="o">.</span><span class="n">plot_enrichment</span><span class="p">(</span><span class="n">gene_list</span><span class="p">)</span>
 </pre></div>
 </div>
+<a class="reference internal image-reference" href="_images/Plot_enrichment.png"><img alt="alternate text" class="align-center" src="_images/Plot_enrichment.png" style="width: 600px; height: 300px;" /></a>
+<p>Get the results of enrichment in a dataframe and use it for downstream analysis. The dataframe contains information about the term names associated to the given targets, the p-value, z-score, combined score, overlapping genes and adjusted p-value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># get results as table for downstream analysis/ pipeline integration</span>
+<span class="n">EnrichR</span><span class="o">.</span><span class="n">get_table_enrichment</span><span class="p">([</span><span class="s1">&#39;LMNA&#39;</span><span class="p">,</span> <span class="s1">&#39;MYH7&#39;</span><span class="p">,</span> <span class="s1">&#39;TNNT2&#39;</span><span class="p">,</span> <span class="s1">&#39;ACE2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/Get_table_enrichment.png"><img alt="alternate text" class="align-center" src="_images/Get_table_enrichment.png" style="width: 760px; height: 140px;" /></a>
 </div>
 
 
