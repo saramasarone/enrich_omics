@@ -52,7 +52,7 @@ pip install enrich-omics
 ``` python
 import enrich_omics
 from enrich_omics import EnrichR
-from enrich_omics import OpenTarget
+from enrich_omics import OpenTargets
 
 # get all available libraries
 EnrichR.get_libraries()
@@ -68,7 +68,7 @@ EnrichR.plot_enrichment(gene_list)
 
 ```python
 # specifying a different library
-EnrichR.plot_enrichment(gene_list, library_name = 'BioPlanet_2019')
+EnrichR.plot_enrichment(gene_list, library_name = 'BioPlanet_2019', height = 200, width = 300, max_hits= None)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Plot_enrichment2.png)
 ```python
