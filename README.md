@@ -10,6 +10,7 @@
 - [About](#about)
 - [Installation](#installation)
 - [Tutorial](#tutorial)
+- [Docs](#docs)
 
 ## About <a name = "about"></a>
 Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of enriched pathways or disease associated to a given target
@@ -34,12 +35,6 @@ Open Target is currently only supporting the search of a single target
 #### Plots
 - Export plots in SVG and PNG
 
-
-#### Drug endpoint
-- Get drug description
-- Get a table with drug information (year of approval, drug type, toxicity, warnings)
-
-
 ## Installation <a name = "installation"></a>
 ```python
 
@@ -62,7 +57,7 @@ EnrichR.get_libraries()
 # check out available libraries with the command above
 
 gene_list = ['LMNA', 'MYH7', 'TNNT2', 'ACE2']
-EnrichR.plot_enrichment(gene_list)
+EnrichR.plot_enrichment(gene_list, library_name='KEGG_2021_Human', height = 300, width = 600, max_hits = None)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Plot_enrichment.png)
 
@@ -73,7 +68,7 @@ EnrichR.plot_enrichment(gene_list, library_name = 'BioPlanet_2019', height = 200
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Plot_enrichment2.png)
 ```python
 # get results as table for downstream analysis/ pipeline integration
-EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'])
+EnrichR.get_table_enrichment(['LMNA', 'MYH7', 'TNNT2', 'ACE2'], library_name='KEGG_2021_Human')
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Get_table_enrichment.png)
 
@@ -96,7 +91,8 @@ OpenTargets.plot_drugs_disease(target_id = 'PLG', entrez = True)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/PLot_drug_disease.png)
 
-
+## Docs <a name = "docs"></a>
+Documentation for this package can be found [here](https://enrich-omics.readthedocs.io/en/latest/opentargets.html)
 
 Contributions always welcome!
 
