@@ -18,7 +18,7 @@ Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of enri
 #### EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is KEGG_pathways_2021
 - Get table with enrichment results
-- Plot with enrichment results ans export it
+- Plot with enrichment results and export it
 
 #### OpenTargets
 Open Target is currently only supporting the search of a single target
@@ -55,9 +55,10 @@ EnrichR.get_libraries()
 # get enrichment for a list of genes/proteins
 # default library is 'KEGG_2021_Human' but other libraries can be specified using the 'library_name' argument.
 # check out available libraries with the command above
+# library_type, height, width and max_hits arguments are optional
 
 gene_list = ['LMNA', 'MYH7', 'TNNT2', 'ACE2']
-EnrichR.plot_enrichment(gene_list, library_name='KEGG_2021_Human', height = 300, width = 600, max_hits = None)
+EnrichR.plot_enrichment(gene_list)
 ```
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/Plot_enrichment.png)
 
@@ -92,7 +93,7 @@ OpenTargets.plot_drugs_disease(target_id = 'PLG', entrez = True)
 ![image](https://raw.githubusercontent.com/saramasarone/enrich_omics/main/Pictures/PLot_drug_disease.png)
 
 ## Docs <a name = "docs"></a>
-Documentation for this package can be found [here](https://enrich-omics.readthedocs.io/en/latest/opentargets.html)
+Documentation for this package can be found [here](https://enrich-omics.readthedocs.io/en/latest/index.html)
 
 Contributions always welcome!
 
