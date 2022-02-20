@@ -21,9 +21,13 @@ Once you have selected the library you want to use (default library is KEGG_huma
 	# default library is 'KEGG_2021_Human' but other libraries can be 	 
 	# specified using the 'library_name' argument.
 	# check out available libraries with the command above
-
+	
+	# 'max_hits' allows users to change the number of hits displayed in the plot
+	# 'height' and 'width' allow users to change the size of the plot
+	#  all arguments are optional apart from 'gene_list'
+	
 	gene_list = ['LMNA', 'MYH7', 'TNNT2', 'ACE2']
-	EnrichR.plot_enrichment(gene_list)
+	EnrichR.plot_enrichment(gene_list, height = 200, width = 300, max_hits = 12)
 
 .. image:: ../Pictures/Plot_enrichment.png
     :width: 600px
