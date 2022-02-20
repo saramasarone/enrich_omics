@@ -25,7 +25,7 @@ Results can also be returned as dictionary.
 
 .. code:: python
 	
-	get_associated_diseases(target_id = 'ACE2', entrez = True)
+	OpenTargets.get_associated_diseases(target_id = 'ACE2', entrez = True)
 
 
 Users can get table with the **drugs associated to a particular target** and use it for downstream analysis. The table will show information about the drug name, mechanism of action, drug type, approved name, the trial phase the drug is involved in and the diseases that are associated to those targets and drugs.

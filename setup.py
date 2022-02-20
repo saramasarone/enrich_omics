@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="enrich_omics",                      # This is the name of the package
-    version="0.1.7",                     # The initial release version
+    version="0.1.8",                     # The initial release version
     author="Sara Masarone",              # Full name of the author
     description="Package to perform enrichment analysis in python using EnrichR and OpenTargets APIs",
     long_description=long_description,   # Long description read from the the readme file
