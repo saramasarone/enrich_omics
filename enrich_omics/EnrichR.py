@@ -92,7 +92,7 @@ class EnrichR(object):
         df_plot['pval'] = p_val
         df_plot['-log(pval)'] = np.round(-np.log(df_plot['pval']),2)
         
-        if max_hits == None:
+        if max_hits is None:
             max_hits = len(df_plot)
         
         df_plot = df_plot.iloc[0:max_hits,:]    
