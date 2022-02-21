@@ -35,10 +35,13 @@ class OpenTargets(object):
             """
         variables = {"ensemblId": gene_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, "variables": variables})
-        assert r.status_code == 200, 'Status code not 200'
-        api_response_as_json = json.loads(r.text)
-        return api_response_as_json
+        try:
+            r = requests.post(base_url, json={"query": query_string, "variables": variables})
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def get_associated_diseases(self, target_id, entrez = False): 
@@ -65,22 +68,24 @@ class OpenTargets(object):
             }
           }
         """
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
             
         # Set variables object of arguments to be passed to endpoint
         variables = {"ensemblId": target_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, "variables": variables})
-        assert r.status_code == 200, 'Status code not 200'
-        api_response_as_json = json.loads(r.text)
-
-        return api_response_as_json
+        try:
+            r = requests.post(base_url, json={"query": query_string, "variables": variables})
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def plot_diseases(self, target_id, max_hit = None, height= 300, width = 300, entrez=False):
         
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
             print(target_id)
         
@@ -94,7 +99,7 @@ class OpenTargets(object):
         df = pd.DataFrame(score, columns = ['score'])
         df['labels'] = dis_labels
         df['score'] = np.round(score, 3)
-        if max_hit == None:
+        if max_hit is None:
             max_hit = len(df)
         df = df.iloc[0:max_hit, :]
         bars = alt.Chart(df).mark_bar().encode(
@@ -146,16 +151,19 @@ class OpenTargets(object):
       }
     }
     """    
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
  
         variables = {"ensemblId": target_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, 
+        try:
+            r = requests.post(base_url, json={"query": query_string, 
                                           "variables": variables})
-        api_response_as_json = json.loads(r.text)
-
-        return api_response_as_json
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def get_table_drugs(self, target_id, entrez = False):
@@ -166,7 +174,7 @@ class OpenTargets(object):
         dis_name=[]
         phase=[]
         
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
  
         res = self.get_drugs(target_id)
@@ -204,13 +212,13 @@ class OpenTargets(object):
         drugs that work for that target
         and the diseases associated to it
         """
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
         table = self.get_table_drugs(target_id)
         if isinstance(table, str):
             return "No data available"
         else:
-            if max_hits == None:
+            if max_hits is None:
                 max_hits = len(table)
             plot = alt.Chart(table.iloc[0:max_hits,]).mark_bar().encode(
             x='drugName',
@@ -226,7 +234,7 @@ class OpenTargets(object):
         drugs and the phase they 
         are involved in"""
         
-        if entrez == True:
+        if entrez:
             target_id = self.entrez_to_ensembl(target_id)
         
         table = self.get_table_drugs(target_id)
@@ -234,7 +242,7 @@ class OpenTargets(object):
         if isinstance(table, str):
             return "No data available"
         else:
-            if max_hits == None:
+            if max_hits is None:
                 max_hits = len(table)
             plot = alt.Chart(table.iloc[0:max_hits,]).mark_bar().encode(
             x='drugName',
