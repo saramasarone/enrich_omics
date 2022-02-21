@@ -35,10 +35,13 @@ class OpenTargets(object):
             """
         variables = {"ensemblId": gene_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, "variables": variables})
-        assert r.status_code == 200, 'Status code not 200'
-        api_response_as_json = json.loads(r.text)
-        return api_response_as_json
+        try:
+            r = requests.post(base_url, json={"query": query_string, "variables": variables})
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def get_associated_diseases(self, target_id, entrez = False): 
@@ -71,11 +74,13 @@ class OpenTargets(object):
         # Set variables object of arguments to be passed to endpoint
         variables = {"ensemblId": target_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, "variables": variables})
-        assert r.status_code == 200, 'Status code not 200'
-        api_response_as_json = json.loads(r.text)
-
-        return api_response_as_json
+        try:
+            r = requests.post(base_url, json={"query": query_string, "variables": variables})
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def plot_diseases(self, target_id, max_hit = None, height= 300, width = 300, entrez=False):
@@ -151,11 +156,14 @@ class OpenTargets(object):
  
         variables = {"ensemblId": target_id}
         base_url = "https://api.platform.opentargets.org/api/v4/graphql"
-        r = requests.post(base_url, json={"query": query_string, 
+        try:
+            r = requests.post(base_url, json={"query": query_string, 
                                           "variables": variables})
-        api_response_as_json = json.loads(r.text)
-
-        return api_response_as_json
+        except requests.exceptions.HTTPError as err:
+            raise 
+        else:
+            api_response_as_json = json.loads(r.text)
+            return api_response_as_json
 
     @classmethod
     def get_table_drugs(self, target_id, entrez = False):
