@@ -13,7 +13,7 @@
 - [Docs](#docs)
 
 ## About <a name = "about"></a>
-Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of enriched pathways or diseases associated to a given target
+Python wrapper for EnrichR and OpenTargets API. Allows for visualisation of enriched pathways or diseases associated to a given target (single target only)
 
 #### EnrichR
 - Choose from all EnrichR libraries (Transcription, Pathways, Drugs, etc). Default library is KEGG_pathways_2021
