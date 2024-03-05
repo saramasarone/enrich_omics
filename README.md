@@ -6,7 +6,7 @@
 
 
 
-## Table of Contents
+## Table of contents
 - [About](#about)
 - [Installation](#installation)
 - [Tutorial](#tutorial)
