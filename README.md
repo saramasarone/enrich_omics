@@ -1,3 +1,5 @@
+### This repo is currently not maintained 
+
 # EnrichOmics: A Python wrapper for EnrichR and OpenTargets
  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
